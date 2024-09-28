@@ -1,0 +1,18 @@
+# KV优化分类
+- 训练阶段优化（暂且不在研究范围内）
+- 部署阶段优化
+  - vLLM:页表管理KV Cache
+  - DistKV-LLM:分布式KV Cache
+  - ChunkAttention：通过字典树来共享KV Cache
+  - infiniGen: 推测重要token，通过迁移到CPU和cache预取来实现高效推理
+- 后训练优化
+  - 淘汰和融合
+    - Scissorhands:重复的注意力模式（实际上注意力模式并没有他说的那么固定）
+    - H2O(Heavy Hitter Oracle):用注意力分数来评价重要token
+    - PyramidInfer:在前面的层数中，注意力比较分散；后面的层中注意力分布比较集中。所以需要分配不同的cache大小
+    - KeyFormer:平滑注意力分布来减少缺失token对注意力分布的影响，并且利用Gumbel分布来强调初始token(来自streaming LLM的发现)
+    - SparQ Attention：
+    - KV Merger:分组融合KV,用累计注意力分数来
+  - 量化
+    - kivi:2bit: 量化
+    - WKVQuant:学习缩放因子和原点来量化
