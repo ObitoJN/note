@@ -11,7 +11,7 @@
 
 ## exp
 ### 模型
-Llama/Llama-2 (Touvron et al., 2023a;b)),
+Llama/Llama-2 (Touvron et al., 2023a;b),
 Falcon (Penedo et al., 2023) and Mistral (Jiang et al., 2023)
 
 ### codebase
