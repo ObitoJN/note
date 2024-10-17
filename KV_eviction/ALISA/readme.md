@@ -43,7 +43,7 @@ SWA保留的token一部分是固定的local token，一部分是根据这部分l
 
 ### 性能
 ![alt text](image-4.png)
-发现在参数较大的模型中，当KV稀疏度达到较高值的时候，ALISA出现了显著的性能下滑。
+发现在某些任务上，当KV稀疏度达到较高值的时候，ALISA出现了显著的性能下滑。
 
 ### 吞吐速度
 和主流的加速框架进行了对比，ALISA有着较大的优势，尤其是batch_size较大的时候。因为vLLM主要针对线上环境优化（往往batch_size较小），所以在batch_size较小时会略胜一筹。
