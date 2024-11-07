@@ -3,7 +3,7 @@
 
 ## method
 作者将头分为两种，检索头（retrieval head）和流式头（streaming head）:
-* 检索头：需要所有的token,用full cache计算
+* 检索头：可以从较长的输入文本中搜索query,需要所有的token,用full cache计算
 * 流式头：不需要所有的token,只用attention sink和local token来计算
 
 与RazorAttention方法的区别是，这一篇用一组可学习的参数来判别头的类型，而不是去分析注意力的稀疏程度。
